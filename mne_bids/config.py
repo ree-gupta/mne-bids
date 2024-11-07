@@ -158,7 +158,7 @@ ALLOWED_DATATYPE_EXTENSIONS = {
     "eeg": allowed_extensions_eeg,
     "ieeg": allowed_extensions_ieeg,
     "nirs": allowed_extensions_nirs,
-    "microephys": aallowed_extensions_microephys,
+    "microephys": allowed_extensions_microephys,
 }
 
 # allow additional extensions that are not BIDS

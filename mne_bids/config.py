@@ -13,7 +13,7 @@ EEGLABIO_VERSION = "0.0.2"
 
 DOI = """https://doi.org/10.21105/joss.01896"""
 
-EPHY_ALLOWED_DATATYPES = ["meg", "eeg", "ieeg", "nirs"]
+EPHY_ALLOWED_DATATYPES = ["meg", "eeg", "ieeg", "nirs", "microephys"]
 
 ALLOWED_DATATYPES = EPHY_ALLOWED_DATATYPES + ["anat", "beh"]
 
@@ -147,12 +147,18 @@ allowed_extensions_nirs = [
     ".snirf",  # SNIRF
 ]
 
+allowed_extensions_microephys = [
+    ".nix",
+    ".nwb"
+]
+
 # allowed extensions (data formats) in BIDS spec
 ALLOWED_DATATYPE_EXTENSIONS = {
     "meg": allowed_extensions_meg,
     "eeg": allowed_extensions_eeg,
     "ieeg": allowed_extensions_ieeg,
     "nirs": allowed_extensions_nirs,
+    "microephys": aallowed_extensions_microephys,
 }
 
 # allow additional extensions that are not BIDS
@@ -163,6 +169,7 @@ ALLOWED_INPUT_EXTENSIONS = (
     + allowed_extensions_eeg
     + allowed_extensions_ieeg
     + allowed_extensions_nirs
+    + allowed_extensions_microephys
     + [".lay", ".EEG", ".cnt", ".CNT", ".bin", ".cdt"]
 )
 
@@ -189,6 +196,9 @@ ALLOWED_FILENAME_SUFFIX = [
     "physio",
     "stim",  # behavioral
     "nirs",
+    "icephys",
+    "ecephys",
+    "probes",
 ]
 
 # converts suffix to known path modalities
@@ -210,6 +220,7 @@ ALLOWED_FILENAME_EXTENSIONS = (
     + [".pos", ".eeg", ".vmrk"]
     + [".dat", ".EEG"]  # extra datatype-specific metadata files.
     + [".mrk"]  # extra eeg extensions  # KIT/Yokogawa/Ricoh marker coil
+    + [".png", ".jpg", ".jpeg"] # extensions for probe and placement images
 )
 
 # allowed BIDSPath entities
